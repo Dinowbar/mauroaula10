@@ -11,15 +11,17 @@
 	<select name="idalunos"> 
     <?php
     include 'conexão.php';
-    $comandoSQL = 'SELECT * FROM `alunos` WHERE `id_turma`';
+    $id = $_GET['idturmas'];
+    
+    $comandoSQL = "SELECT * FROM `alunos` WHERE `id_turma` = $id";
 
     foreach($conexao->query($comandoSQL) as $linha){
         echo"<option value = '{$linha['id']}'>{$linha['nome']}</option>";
     }
-
+   
 ?>
 </select>
-	<button>Ver Nota</button>
+<button>Ver Nota</button>
     </form>
 </body>
 </html>
