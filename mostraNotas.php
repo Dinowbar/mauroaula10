@@ -7,13 +7,18 @@
 </head>
 <body>
     <form action="mostraAluno.php">
-    <label for="nota">Nota</label>
-	<select name="idNota"> 
+    <label for="nota">Notas</label>
     <?php
     include 'conexão.php';
-    $comandoSQL = 'SELECT `valor`* FROM `notas` WHERE `id_aluno` = 1';
+    $idd = $_GET['idalunos'];
+    $comandoSQL = "SELECT  * FROM `notas` WHERE `id_aluno` = $idd";
+
+    foreach($conexao->query($comandoSQL) as $linha){
+       $nota = $linha['valor']; 
+       echo "<br>$nota";
+    }
+
 ?>
-</select>
     </form>
 </body>
 </html>
