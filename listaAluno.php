@@ -8,7 +8,7 @@
 <body>
     <form action="mostraAluno.php">
     <label for="turmas">Selecione a turma:</label>
-	<select name="idturma"> 
+	<select name="idturmas"> 
     <?php
     include 'conexão.php';
     $comandoSQL = 'SELECT * FROM `turmas`';
